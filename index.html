@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HB</title>
+    <!-- Подключение CSS Bootstrap (пример через CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Задаем высоту body и html, чтобы центрирование по вертикали сработало на всю страницу */
+        html, body {
+            height: 100%;
+        }
+        /* Убираем стандартный отступ body, чтобы элементы были строго по центру */
+        body {
+            margin: 0;
+            background-color: rgb(234, 211, 255);
+        }
+
+        img, .vid {
+            border-radius: 8px;
+        }
+
+        .suchka {
+            display: inline;
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Главный контейнер: занимает всю высоту экрана и использует Flexbox -->
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100 p-4">
+    
+    <div class="w-100" style="max-width: 800px;">
+        <!-- Заголовок (опционально) -->
+        <h2 class="text-center mb-4">Happy <div class="suchka">birthday</div> !</h2>
+
+        <!-- 1. КАРУСЕЛЬ -->
+        <div id="imageCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Слайд 1 (активный) -->
+                <div class="carousel-item active">
+                    <img src="img/1.jpg" class="d-block w-100" alt="Фото 1">
+                </div>
+                <!-- Слайд 2 -->
+                <div class="carousel-item">
+                    <img src="img/2.jpg" class="d-block w-100" alt="Фото 2">
+                </div>
+                <!-- Слайд 3 -->
+                <div class="carousel-item">
+                    <img src="img/3.jpg" class="d-block w-100" alt="Фото 3">
+                </div>
+                <!-- Слайд 3 -->
+                <div class="carousel-item">
+                    <img src="img/4.jpg" class="d-block w-100" alt="Фото 3">
+                </div>
+            </div>
+            <!-- Кнопки управления -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Предыдущий</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Следующий</span>
+            </button>
+        </div>
+
+        <!-- 2. ВИДЕО -->
+        <div class="ratio ratio-16x9">
+            <!-- Видео с YouTube (замените ID на свой) -->
+            <iframe class="vid" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+
+    </div>
+</div>
+
+<!-- Подключение JS Bootstrap (обязательно для работы карусели) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
